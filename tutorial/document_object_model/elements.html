@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements function</title>
+</head>
+<body>
+    <div id="element-box"></div>
+    <script>
+        // Select an element with either their ID (or) Class name (or) tagname
+        // If there are multiple elements with same class or tagname then it will be indexed from which comes in the first
+
+        // 1. Select the element which you want to modify
+
+        var element = document.getElementById("element-box")
+
+        /* Now perform the operation you wanna perform with the element box, for example creating a element with 'createElement'
+           and then adding the necessary attributes and the appending the child to the DOM
+        */
+        
+        var header = document.createElement("p")
+        header.setAttribute("name", "surya") // Sets up attribute for p tag
+        header.setAttribute("id", "sowmiya") 
+        header.innerHTML = "This is dedicated to surya_sowmiya" // Sets up value for the header p tag
+
+        // Now append the child to the actual dom property present
+
+        element.appendChild(header);
+    </script>
+</body>
+</html>

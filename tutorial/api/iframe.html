@@ -30,7 +30,9 @@
         document.getElementById('playVideo').addEventListener('click', function() {
             document.getElementById('overlay').classList.add('show');
             document.getElementById('popup').classList.add('show');
-            player.playVideo();
+            if(player.playVideo()){
+                player.playVideo()
+            }
         });
 
         document.getElementById('overlay').addEventListener('click', function() {

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load on wait</title>
+</head>
+<body>
+    <form id="load-form" method="post">
+        <Button type="submit">Load</Button>
+    </form>
+    <div>
+        <p id="content-text"></p>
+    </div>
+    <script>
+        var form = document.getElementById('load-form').addEventListener('submit', sendReq);
+
+    function sendReq(event) {
+        event.preventDefault();
+        var req = new XMLHttpRequest();
+        req.onload = function() {
+            viewText(this.responseText);
+        };
+        req.open('GET', '/library/load/formload.php?get_text=something', true);
+        req.send();
+    }
+
+    function viewText(temp) {
+        console.log(temp);
+        document.getElementById('content-text').innerText = temp;
+    }
+    </script>
+</body>
+</html>
